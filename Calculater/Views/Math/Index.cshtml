@@ -1,0 +1,59 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Operations</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4>Math Operations</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            <div class="mb-3">
+                                <label for="txtnum1" class="form-label">First Number</label>
+                                <input type="text" name="txtnum1" id="txtnum1" class="form-control" placeholder="Enter first number" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtnum2" class="form-label">Second Number</label>
+                                <input type="text" name="txtnum2" id="txtnum2" class="form-control" placeholder="Enter second number" required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="operation" class="form-label">Select Operation</label>
+                                <select name="operation" id="operation" class="form-select" required>
+                                    <option value="Add">Addition</option>
+                                    <option value="Subtract">Subtraction</option>
+                                    <option value="Multiply">Multiplication</option>
+                                    <option value="Divide">Division</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">Calculate</button>
+                            </div>
+                        }
+
+                        @if (ViewBag.data != null)
+                        {
+                            <div class="alert alert-info mt-3 text-center" role="alert">
+                                @ViewBag.data
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>﻿
